@@ -1,7 +1,7 @@
 define('template', function(template) {
   var template = {
     load: function (resourceName, parentRequire, callback, config) {
-      var extension = '.html';
+      var extension = '.handlebars';
 
       return parentRequire(
         [("text!" + resourceName + extension)],

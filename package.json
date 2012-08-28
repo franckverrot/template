@@ -1,0 +1,25 @@
+{
+    "name": "template",
+    "version": "0.0.1",
+    "description": "A RequireJS plugin that compile Handlebars templates of EmberJS applications that use AMD.",
+    "categories": [
+        "Loader plugins"
+    ],
+    "main": "template.js",
+    "github": "https://github.com/franckverrot/template",
+    "bugs": {
+        "web": "https://github.com/franckverrot/template/issues"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/franckverrot/template.git"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+    ]
+}

@@ -1,18 +1,25 @@
-define('template', function(template) {
-  var template = {
-    load: function (resourceName, parentRequire, callback, config) {
-      var extension = '.handlebars';
+define(['module'], function(module) {
 
-      return parentRequire(
-        [("text!" + resourceName + extension)],
-        function (templateContent) {
-          var templateName = resourceName;
-          Ember.TEMPLATES[templateName] = Ember.Handlebars.compile(templateContent);
-          callback(templateName);
+  var masterConfig = module.config();
+
+  var hbs = {
+    load: function(name, req, load, config) {
+      config = config || {};
+      var extension = masterConfig.extension;
+      if (config.extension) {
+        extension = config.extension;
+      }
+      extension = extension || 'handlebars';
+      var textName = 'text!' + name + '.' + extension;
+
+      return req([textName], function (template) {
+          var templateName = name;
+          Ember.TEMPLATES[templateName] = Ember.Handlebars.compile(template);
+          load(templateName);
         }
       );
     }
   }
 
-  return template;
+  return hbs;
 });

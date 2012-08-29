@@ -12,7 +12,7 @@ define(['module'], function(module) {
       extension = extension || 'handlebars';
       var textName = 'text!' + name + '.' + extension;
 
-      return req([textName], function (template) {
+      return req(['ember', textName], function (Ember, template) {
           var templateName = name;
           Ember.TEMPLATES[templateName] = Ember.Handlebars.compile(template);
           load(templateName);
